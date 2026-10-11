@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do produto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <h1>Catálogo de Produtos</h1>
+  </header>
+
+  <main id="conteudo">
+    <a class="link-voltar" href="index.html">← Voltar para a lista</a>
+
+    <div id="estado-carregando" class="estado" role="status">
+      <span class="spinner" aria-hidden="true"></span> Carregando produto...
+    </div>
+
+    <div id="estado-erro" class="estado erro" role="alert" hidden>
+      <p id="mensagem-erro"></p>
+      <a class="botao" href="index.html">Voltar para a lista</a>
+    </div>
+
+    <!-- <article> porque é um conteúdo completo e independente -->
+    <article id="estado-sucesso" class="detalhes" hidden>
+      <div class="galeria">
+        <img id="imagem-principal" alt="">
+        <!-- Miniaturas criadas pelo JavaScript -->
+        <ul id="miniaturas" class="miniaturas"></ul>
+      </div>
+      <div class="info">
+        <h2 id="nome"></h2>
+        <p id="descricao"></p>
+        <!-- <dl> = lista de descrição (termo + valor), ideal para ficha de dados -->
+        <dl>
+          <div><dt>Categoria</dt><dd id="categoria"></dd></div>
+          <div><dt>Preço</dt><dd id="preco"></dd></div>
+          <div><dt>Desconto</dt><dd id="desconto"></dd></div>
+          <div><dt>Preço com desconto</dt><dd id="preco-final"></dd></div>
+          <div><dt>Avaliação</dt><dd id="avaliacao"></dd></div>
+          <div><dt>Estoque</dt><dd id="estoque"></dd></div>
+          <div id="bloco-marca" hidden><dt>Marca</dt><dd id="marca"></dd></div>
+          <div id="bloco-tags" hidden><dt>Tags</dt><dd><ul id="tags" class="tags"></ul></dd></div>
+        </dl>
+      </div>
+    </article>
+  </main>
+
+  <footer class="rodape"><p>Dados fornecidos pela API pública DummyJSON.</p></footer>
+
+  <script src="utils.js"></script>
+  <script src="detalhes.js"></script>
+</body>
+</html>
